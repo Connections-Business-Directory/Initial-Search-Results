@@ -229,6 +229,7 @@ if ( ! class_exists( 'Connections_Initial_Search_Results' ) ) {
 									'show_empty' => $atts['show_empty_categories'],
 									'parent_id'  => $atts['enable_category_by_root_parent'] ? $atts['category'] : array(),
 									'exclude'    => $atts['exclude_category'],
+									'return'     => TRUE,
 								)
 							);
 							$search    = cnTemplatePart::search( $atts );
