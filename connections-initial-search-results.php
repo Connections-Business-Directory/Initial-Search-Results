@@ -243,7 +243,7 @@ if ( ! class_exists( 'Connections_Initial_Search_Results' ) ) {
 							//$replace = str_replace( array( "rn", "r", "n", "t" ), array( ' ', ' ', ' ', ' ' ), $replace );
 
 							// This needs to be wrapped in a div with an id of #cn-list so the CSS styles will be applied.
-							$replace = '<div id="cn-list">' . $replace . '</div>';
+							$replace = '<div id="cn-list" style="min-height: 250px;">' . $replace . '</div>';
 
 						} else {
 
