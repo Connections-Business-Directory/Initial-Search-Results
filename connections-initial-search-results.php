@@ -2,7 +2,7 @@
 /**
  * An extension for the Connections Business Directory plugin which adds the option to suppress the display of the initial results.
  *
- * @package   Connections Business Directory Initial Search Results
+ * @package   Connections Business Directory Extension - Initial Search Results
  * @category  Extension
  * @author    Steven A. Zahm
  * @license   GPL-2.0+
@@ -10,7 +10,7 @@
  * @copyright 2020 Steven A. Zahm
  *
  * @wordpress-plugin
- * Plugin Name:       Connections Business Directory Initial Search Results
+ * Plugin Name:       Connections Business Directory Extension - Initial Search Results
  * Plugin URI:        https://connections-pro.com/documentation/
  * Description:       An extension for the Connections Business Directory plugin which adds the option to suppress the display of the initial results.
  * Version:           1.0
