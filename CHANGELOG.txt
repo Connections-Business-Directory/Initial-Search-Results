@@ -1,4 +1,8 @@
 == Changelog ==
 
+= 1.0.1 08/19/2020 =
+* TWEAK: Add inline style to set min-height so the drop down has plenty of room to display vs. being cutoff.
+* TWEAK: Remove use of `create_function()`;
+
 = 1.0 11/06/2017 =
 * Initial commit.
