@@ -248,7 +248,7 @@ if ( ! class_exists( 'Connections_Initial_Search_Results' ) ) {
 						} else {
 
 							// Rewrite the $atts array to prep it to be imploded.
-							array_walk( $atts, create_function( '&$i,$k','$i="$k=\"$i\"";' ) );
+							array_walk( $atts, function( &$i, $k ) { $i = "{$k}=\"{$i}\""; } );
 
 							$replace = '[' . $shortcode . ' ' . implode( ' ', $atts ) . ']';
 						}
