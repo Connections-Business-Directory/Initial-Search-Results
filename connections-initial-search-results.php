@@ -27,6 +27,8 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
+use Connections_Directory\Utility\_format;
+
 if ( ! class_exists( 'Connections_Initial_Search_Results' ) ) {
 
 	final class Connections_Initial_Search_Results {
@@ -223,22 +225,74 @@ if ( ! class_exists( 'Connections_Initial_Search_Results' ) ) {
 							add_action( 'wp_enqueue_scripts', array( __CLASS__, 'cn_enqueue_chosen' ) );
 							add_action( 'wp_print_footer_scripts', array( __CLASS__, 'cn_init_chosen' ), 999 );
 
+							$categoryProperties = array( 'return' => true );
+							$formProperties     = array( 'return' => true );
+
+							if ( array_key_exists( 'str_select', $atts ) ) {
+
+								$categoryProperties['default'] = $atts['str_select'];
+							}
+
+							if ( array_key_exists( 'str_select_all', $atts ) ) {
+
+								$categoryProperties['select_all'] = $atts['str_select_all'];
+							}
+
+							if ( array_key_exists( 'enable_category_multi_select', $atts ) ) {
+
+								_format::toBoolean( $atts['enable_category_multi_select'] );
+								$categoryProperties['type'] = $atts['enable_category_multi_select'] ? 'multiselect' : 'select';
+							}
+
+							if ( array_key_exists( 'enable_category_group_by_parent', $atts ) ) {
+
+								$categoryProperties['group'] = $atts['enable_category_group_by_parent'];
+							}
+
+							if ( array_key_exists( 'show_category_count', $atts ) ) {
+
+								$categoryProperties['show_count'] = $atts['show_category_count'];
+							}
+
+							if ( array_key_exists( 'show_empty_categories', $atts ) ) {
+
+								$categoryProperties['show_empty'] = $atts['show_empty_categories'];
+							}
+
+							if ( array_key_exists( 'enable_category_by_root_parent', $atts ) ) {
+
+								_format::toBoolean( $atts['enable_category_by_root_parent'] );
+								$categoryProperties['parent_id'] = $atts['enable_category_by_root_parent'] ? $atts['category'] : array();
+							}
+
+							if ( array_key_exists( 'exclude_category', $atts ) ) {
+
+								$categoryProperties['exclude'] = $atts['exclude_category'];
+							}
+
+							if ( array_key_exists( 'force_home', $atts ) ) {
+
+								_format::toBoolean( $atts['force_home'] );
+								$formProperties['force_home'] = $atts['force_home'];
+
+							} else {
+
+								$formProperties['force_home'] = false;
+							}
+
+							if ( array_key_exists( 'home_id', $atts ) ) {
+
+								$formProperties['home_id'] = $atts['home_id'];
+
+							} else {
+
+								$formProperties['home_id'] = cnShortcode::getHomeID();
+							}
+
 							// Passing the shortcode $atts in case there are any template part specific shortcode options set.
-							$category  = cnTemplatePart::category(
-								array(
-									'default'    => $atts['str_select'],
-									'select_all' => $atts['str_select_all'],
-									'type'       => $atts['enable_category_multi_select'] ? 'multiselect' : 'select',
-									'group'      => $atts['enable_category_group_by_parent'],
-									'show_count' => $atts['show_category_count'],
-									'show_empty' => $atts['show_empty_categories'],
-									'parent_id'  => $atts['enable_category_by_root_parent'] ? $atts['category'] : array(),
-									'exclude'    => $atts['exclude_category'],
-									'return'     => TRUE,
-								)
-							);
+							$category  = cnTemplatePart::category( $categoryProperties );
 							$search    = cnTemplatePart::search( $atts );
-							$formOpen  = cnTemplatePart::formOpen( $atts );
+							$formOpen  = cnTemplatePart::formOpen( $formProperties );
 							$formClose = cnTemplatePart::formClose( $atts );
 
 							// Create the final output.
