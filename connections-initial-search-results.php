@@ -198,6 +198,11 @@ if ( ! class_exists( 'Connections_Initial_Search_Results' ) ) {
 						//$atts = shortcode_parse_atts( $matches[3][ array_search( $shortcode, $matches[2] ) ] );
 						$atts = shortcode_parse_atts( $matches[0][3] );
 
+						if ( ! is_array( $atts ) ) {
+
+							$atts = array();
+						}
+
 						// Remove the cn-image query vars.
 						$wp_query->query_vars = array_diff_key( (array) $wp_query->query_vars, array_flip( array( 'src', 'w', 'h', 'q', 'a', 'zc', 'f', 's', 'o', 'cc', 'ct' ) ) );
 
