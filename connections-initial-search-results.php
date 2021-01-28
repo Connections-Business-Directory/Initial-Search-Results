@@ -77,8 +77,8 @@ if ( ! class_exists( 'Connections_Initial_Search_Results' ) ) {
 			self::loadTextdomain();
 
 			/*
-				 * Register the settings tabs shown on the Settings admin page tabs, sections and fields.
-				 */
+			 * Register the settings tabs shown on the Settings admin page tabs, sections and fields.
+			 */
 			//add_filter( 'cn_register_settings_tabs', array( __CLASS__, 'registerSettingsTab' ) );
 			//add_filter( 'cn_register_settings_sections', array( __CLASS__, 'registerSettingsSections' ) );
 			add_filter( 'cn_register_settings_fields', array( __CLASS__, 'registerSettingsFields' ) );
