@@ -13,7 +13,7 @@
  * Plugin Name:       Connections Business Directory Extension - Initial Search Results
  * Plugin URI:        https://connections-pro.com/documentation/
  * Description:       An extension for the Connections Business Directory plugin which adds the option to suppress the display of the initial results.
- * Version:           1.0.1
+ * Version:           1.0.2
  * Author:            Steven A. Zahm
  * Author URI:        https://connections-pro.com
  * License:           GPL-2.0+
@@ -33,7 +33,7 @@ if ( ! class_exists( 'Connections_Initial_Search_Results' ) ) {
 
 	final class Connections_Initial_Search_Results {
 
-		const VERSION = '1.0.1';
+		const VERSION = '1.0.2';
 
 		/**
 		 * @var string The absolute path this this file.
