@@ -1,5 +1,10 @@
 == Changelog ==
 
+= 1.0.2 01/28/2021 =
+* TWEAK: phpDoc alignment.
+* BUG: Ensure parse attributes is an array.
+* BUG: Check that array keys exist before accessing.
+
 = 1.0.1 08/19/2020 =
 * TWEAK: Add inline style to set min-height so the drop down has plenty of room to display vs. being cutoff.
 * TWEAK: Remove use of `create_function()`;
