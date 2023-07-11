@@ -362,7 +362,7 @@ if ( ! class_exists( 'Connections_Initial_Search_Results' ) ) {
 
 			add_action(
 				'admin_notices',
-				function() {
+				static function() {
 					echo '<div id="message" class="error"><p><strong>ERROR:</strong> Connections must be installed and active in order use this Connections addon.</p></div>';
 				}
 			);
