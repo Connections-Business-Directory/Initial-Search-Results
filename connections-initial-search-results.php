@@ -36,7 +36,7 @@ if ( ! class_exists( 'Connections_Initial_Search_Results' ) ) {
 		const VERSION = '1.0.2';
 
 		/**
-		 * @var string The absolute path this this file.
+		 * @var string The absolute path this file.
 		 *
 		 * @access private
 		 * @since 1.0
@@ -208,7 +208,7 @@ if ( ! class_exists( 'Connections_Initial_Search_Results' ) ) {
 						// Remove the cn-image query vars.
 						$wp_query->query_vars = array_diff_key( (array) $wp_query->query_vars, array_flip( array( 'src', 'w', 'h', 'q', 'a', 'zc', 'f', 's', 'o', 'cc', 'ct' ) ) );
 
-						// Show the just the search form w/o showing the initial results?
+						// Show just the search form w/o showing the initial results?
 						// If a Connections query var is set, show the results instead.
 						if ( '1' === cnSettingsAPI::get( 'connections', 'search', 'suppress_results' ) &&
 						     FALSE == (bool) array_intersect( $registeredQueryVars, array_keys( (array) $wp_query->query_vars ) )
@@ -373,7 +373,7 @@ if ( ! class_exists( 'Connections_Initial_Search_Results' ) ) {
 
 	/**
 	 * Since Connections loads at default priority 10, and this extension is dependent on Connections,
-	 * we'll load with priority 11 so we know Connections will be loaded and ready first.
+	 * we'll load with priority 11, so we know Connections will be loaded and ready first.
 	 */
 	add_action( 'plugins_loaded', 'Connections_Initial_Search_Results', 11 );
 
