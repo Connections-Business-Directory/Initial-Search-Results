@@ -350,7 +350,7 @@ if ( ! class_exists( 'Connections_Initial_Search_Results' ) ) {
 	 * @access public
 	 * @since 1.0
 	 *
-	 * @return mixed object | bool
+	 * @return Connections_Initial_Search_Results|false
 	 */
 	function Connections_Initial_Search_Results() {
 
