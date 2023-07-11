@@ -1,5 +1,11 @@
 == Changelog ==
 
+= 1.0.3 07/11/2023 =
+* TWEAK: Remove use of `create_function()`.
+* TWEAK: Use static function display admin notice.
+* OTHER: Correct misspellings.
+* DEV: phpDoc correction.
+
 = 1.0.2 01/28/2021 =
 * TWEAK: phpDoc alignment.
 * BUG: Ensure parse attributes is an array.
